@@ -18,6 +18,22 @@ from typing import List, Dict, Optional, Tuple
 from dotenv import load_dotenv
 from collections import Counter
 
+
+def style_plot(fig, paper="#efecf5", plot="#efecf5"):
+    """
+    Apply consistent background styling to Plotly figures.
+
+    Args:
+        fig: plotly.graph_objects.Figure instance
+        paper: background color for the paper area
+        plot: background color for the plotting area
+
+    Returns:
+        The same figure instance with updated layout.
+    """
+    fig.update_layout(paper_bgcolor=paper, plot_bgcolor=plot)
+    return fig
+
 # ============================================================================
 # API CONFIGURATION
 # ============================================================================
@@ -1392,8 +1408,6 @@ def render_perfume_detail_view(perfume: Dict):
             
             fig_accords.update_layout(
                 height=chart_height,
-                plot_bgcolor='white',
-                paper_bgcolor='white',
                 font=dict(color='#333', size=15, family='Arial, sans-serif'),  # Slightly smaller font
                 xaxis=dict(
                     title='',
@@ -1412,6 +1426,7 @@ def render_perfume_detail_view(perfume: Dict):
                 bargap=0.1,  # Tight gap for compact look
                 hovermode=False
             )
+            style_plot(fig_accords)
             
             st.plotly_chart(fig_accords, use_container_width=True)
     
@@ -1479,8 +1494,6 @@ def render_perfume_detail_view(perfume: Dict):
     
     fig_season.update_layout(
         height=350,
-        plot_bgcolor='white',
-        paper_bgcolor='white',
         font=dict(color='#333', size=14, family='Arial, sans-serif'),
         xaxis=dict(
             title='', 
@@ -1497,6 +1510,7 @@ def render_perfume_detail_view(perfume: Dict):
         margin=dict(l=40, r=40, t=20, b=40),
         bargap=0.3
     )
+    style_plot(fig_season)
     st.plotly_chart(fig_season, use_container_width=True)
     
     # OCCASION BAR CHART (Day/Night only) - Improved appearance
@@ -1525,8 +1539,6 @@ def render_perfume_detail_view(perfume: Dict):
     
     fig_occasion.update_layout(
         height=350,
-        plot_bgcolor='white',
-        paper_bgcolor='white',
         font=dict(color='#333', size=14, family='Arial, sans-serif'),
         xaxis=dict(
             title='', 
@@ -1543,6 +1555,7 @@ def render_perfume_detail_view(perfume: Dict):
         margin=dict(l=40, r=40, t=20, b=40),
         bargap=0.3
     )
+    style_plot(fig_occasion)
     st.plotly_chart(fig_occasion, use_container_width=True)
     
     st.markdown("---")
@@ -1801,10 +1814,10 @@ def render_questionnaire_results():
             )
         ),
         showlegend=False,
-        paper_bgcolor='white',
-        plot_bgcolor='white',
+        
         font=dict(size=14, color='#333')
     )
+    style_plot(fig_radar)
     
     st.plotly_chart(fig_radar, use_container_width=True)
     
@@ -2230,8 +2243,6 @@ def render_inventory_statistics(inventory: List[Dict]):
     
     fig_season.update_layout(
         height=350,
-        plot_bgcolor='white',
-        paper_bgcolor='white',
         font=dict(color='#333', size=14, family='Arial, sans-serif'),
         xaxis=dict(
             title='', 
@@ -2247,6 +2258,7 @@ def render_inventory_statistics(inventory: List[Dict]):
         margin=dict(l=40, r=40, t=20, b=40),
         bargap=0.3
     )
+    style_plot(fig_season)
     st.plotly_chart(fig_season, use_container_width=True)
     
     # OCCASION BAR CHART (Day/Night only) - Same style as perfume detail view
@@ -2280,8 +2292,6 @@ def render_inventory_statistics(inventory: List[Dict]):
     
     fig_occasion.update_layout(
         height=350,
-        plot_bgcolor='white',
-        paper_bgcolor='white',
         font=dict(color='#333', size=14, family='Arial, sans-serif'),
         xaxis=dict(
             title='', 
@@ -2297,6 +2307,7 @@ def render_inventory_statistics(inventory: List[Dict]):
         margin=dict(l=40, r=40, t=20, b=40),
         bargap=0.3
     )
+    style_plot(fig_occasion)
     st.plotly_chart(fig_occasion, use_container_width=True)
 
 def create_donut_chart(note_counter: Counter, title: str):
@@ -2339,11 +2350,11 @@ def create_donut_chart(note_counter: Counter, title: str):
     fig.update_layout(
         showlegend=True,
         legend=dict(orientation="v", yanchor="middle", y=0.5, xanchor="left", x=1.1),
-        paper_bgcolor='white',
-        plot_bgcolor='white',
+        
         margin=dict(t=0, b=0, l=0, r=0),
         height=250
     )
+    style_plot(fig)
     
     st.plotly_chart(fig, use_container_width=True)
 
