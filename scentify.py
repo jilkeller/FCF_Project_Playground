@@ -1,10 +1,3 @@
-"""
-SCENTIFY - Perfume Finder Website
-A comprehensive computer science project built with Streamlit and Python.
-This application helps users find their perfect perfume through search, questionnaire, and personal inventory management.
-Includes machine learning-based recommendation system and Fragella API integration.
-"""
-
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -56,6 +49,7 @@ def apply_custom_styling():
         <style>
         /* Import Google Fonts for elegant typography */
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
         
         /* Main application background with subtle gradient */
         .stApp {
@@ -81,10 +75,10 @@ def apply_custom_styling():
         
         /* Main header styling */
         .main-header {
-            font-size: 52px;
+            font-size: 70px;
             font-weight: 600;
             color: #6b5b95;
-            text-align: left;
+            text-align: center;
             margin-bottom: 10px;
             letter-spacing: 3px;
         }
@@ -97,13 +91,13 @@ def apply_custom_styling():
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             margin: 20px 0;
             border: 2px solid #e8e4f0;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            height: 100%;
-        }
-        
-        .section-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 16px rgba(107, 91, 149, 0.2);
+            height: 250px;  /* Fixed height */
+            min-height: 250px;
+            max-height: 250px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;  /* Align all content to top */
+            overflow: hidden;  /* Prevent content overflow */
         }
         
         /* Section title styling */
@@ -111,15 +105,24 @@ def apply_custom_styling():
             font-size: 28px;
             font-weight: 600;
             color: #6b5b95;
-            margin-bottom: 15px;
+            margin-bottom: 30px;  /* 30px spacing below title */
+            text-align: center;
+            height: 35px;  /* Fixed height for alignment */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;  /* Prevent title from shrinking */
         }
         
         /* Section description styling */
         .section-description {
             font-size: 16px;
             color: #666;
+            margin-top: 0px;  /* No extra spacing (title handles the gap) */
             margin-bottom: 20px;
             line-height: 1.6;
+            text-align: center;
+            flex: 1;  /* Take remaining space */
         }
         
         /* Button styling */
@@ -139,6 +142,96 @@ def apply_custom_styling():
             background-color: #5a4a7f;
             box-shadow: 0 4px 12px rgba(107, 91, 149, 0.4);
             transform: translateY(-2px);
+        }
+        
+        /* Logo container styling - centered on page */
+        .logo-container {
+            cursor: pointer;
+            display: block;
+            text-align: center;
+            transition: opacity 0.3s ease;
+            margin: 0 auto 5px auto;
+            width: 100%;
+        }
+        
+        .logo-container:hover {
+            opacity: 0.8;
+        }
+        
+        .logo-text {
+            font-size: 70px;
+            font-weight: 600;
+            color: #6b5b95;
+            letter-spacing: 3px;
+            text-align: center;
+            user-select: none;
+            display: block;
+            width: 100%;
+        }
+        
+        .logo-image {
+            max-height: 80px;
+            width: auto;
+            display: block;
+            margin: 0 auto;
+        }
+        
+        /* Tagline styling below logo */
+        .logo-tagline {
+            font-family: 'Great Vibes', cursive;
+            font-size: 24px;
+            color: #6b5b95;
+            text-align: center;
+            margin-top: 0px;
+            margin-bottom: 10px;
+            font-weight: 400;
+            display: block;
+            width: 100%;
+        }
+        
+        /* Home button styling - keep on left */
+        .home-button-container {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 1000;
+        }
+        
+        /* Home button styling */
+        button[key="logo_button"] {
+            background-color: #6b5b95 !important;
+            color: white !important;
+            border: none !important;
+            border-radius: 8px !important;
+            padding: 8px 16px !important;
+            font-size: 20px !important;
+            transition: all 0.3s ease !important;
+            width: auto !important;
+        }
+        
+        button[key="logo_button"]:hover {
+            background-color: #5a4a7f !important;
+            box-shadow: 0 4px 12px rgba(107, 91, 149, 0.4) !important;
+            transform: translateY(-2px) !important;
+        }
+        
+        /* Ensure equal column widths on landing page */
+        .stColumn {
+            min-width: 0;
+            flex: 1 1 0px;
+        }
+        
+        /* Responsive adjustments for smaller screens */
+        @media (max-width: 768px) {
+            .section-card {
+                height: auto;
+                min-height: 300px;
+                max-height: none;
+            }
+            
+            .main-header {
+                font-size: 36px;
+            }
         }
         
         /* Filter tag styling */
@@ -491,24 +584,27 @@ def transform_api_perfume(api_perfume: Dict) -> Dict:
     Returns:
         Transformed perfume dictionary
     """
-    # Extract notes from the Notes object
+    # Extract notes from the Notes object - including imageUrl from API
     notes_obj = api_perfume.get('Notes', {})
     top_notes = []
     heart_notes = []
     base_notes = []
     
     if notes_obj:
-        # Top notes
+        # Top notes - store objects with name and imageUrl
         if 'Top' in notes_obj and notes_obj['Top']:
-            top_notes = [note.get('name', '') for note in notes_obj['Top'] if note.get('name')]
+            top_notes = [{'name': note.get('name', ''), 'imageUrl': note.get('imageUrl', '')} 
+                        for note in notes_obj['Top'] if note.get('name')]
         
-        # Middle/Heart notes
+        # Middle/Heart notes - store objects with name and imageUrl
         if 'Middle' in notes_obj and notes_obj['Middle']:
-            heart_notes = [note.get('name', '') for note in notes_obj['Middle'] if note.get('name')]
+            heart_notes = [{'name': note.get('name', ''), 'imageUrl': note.get('imageUrl', '')} 
+                          for note in notes_obj['Middle'] if note.get('name')]
         
-        # Base notes
+        # Base notes - store objects with name and imageUrl
         if 'Base' in notes_obj and notes_obj['Base']:
-            base_notes = [note.get('name', '') for note in notes_obj['Base'] if note.get('name')]
+            base_notes = [{'name': note.get('name', ''), 'imageUrl': note.get('imageUrl', '')} 
+                         for note in notes_obj['Base'] if note.get('name')]
     
     # Parse seasonality from Season Ranking - try multiple possible field names
     seasonality = {"Winter": 3, "Fall": 3, "Spring": 3, "Summer": 3}  # Default values
@@ -614,12 +710,14 @@ def transform_api_perfume(api_perfume: Dict) -> Dict:
         "scent_type": scent_type,
         "description": f"A {api_perfume.get('Longevity', 'moderate')} fragrance with {api_perfume.get('Sillage', 'moderate')} projection.",
         "image_url": api_perfume.get('Image URL', 'https://via.placeholder.com/300x400/c8b8d8/FFFFFF?text=Perfume'),
-        "top_notes": top_notes if top_notes else ["Bergamot", "Lemon"],
-        "heart_notes": heart_notes if heart_notes else ["Jasmine", "Rose"],
-        "base_notes": base_notes if base_notes else ["Musk", "Vanilla"],
+        "top_notes": top_notes if top_notes else [{"name": "Bergamot", "imageUrl": ""}, {"name": "Lemon", "imageUrl": ""}],
+        "heart_notes": heart_notes if heart_notes else [{"name": "Jasmine", "imageUrl": ""}, {"name": "Rose", "imageUrl": ""}],
+        "base_notes": base_notes if base_notes else [{"name": "Musk", "imageUrl": ""}, {"name": "Vanilla", "imageUrl": ""}],
         "main_accords": main_accords if main_accords else ["Fresh", "Floral"],  # ALL accords, not limited
         "seasonality": seasonality,
-        "occasion": occasion
+        "occasion": occasion,
+        "longevity": api_perfume.get('Longevity', 'Moderate'),
+        "sillage": api_perfume.get('Sillage', 'Moderate')
     }
     
     return transformed
@@ -727,48 +825,126 @@ def initialize_session_state():
         st.session_state.search_context = {}
 
 # ============================================================================
+# LOGO CONFIGURATION
+# ============================================================================
+# 
+# HOW TO USE YOUR OWN LOGO:
+# -------------------------
+# 1. Save your logo PNG file in the same folder as this Python file
+# 2. Update LOGO_IMAGE_PATH with your logo filename (e.g., "my_logo.png")
+# 3. Change LOGO_TYPE from "text" to "image"
+# 4. Adjust LOGO_HEIGHT to resize your logo (default: 80 pixels)
+# 5. Customize LOGO_TAGLINE to change the text below the logo
+#
+# EXAMPLE - Using a PNG logo:
+#   LOGO_TYPE = "image"
+#   LOGO_IMAGE_PATH = "scentify_logo.png"
+#   LOGO_HEIGHT = 100
+#   LOGO_TAGLINE = "Your Custom Tagline"
+#
+# EXAMPLE - Using text logo (default):
+#   LOGO_TYPE = "text"
+#   LOGO_TEXT = "SCENTIFY"
+#   LOGO_TAGLINE = "Find Your Signature Scent"
+#
+
+LOGO_TYPE = "text"  # Options: "text" or "image"
+LOGO_IMAGE_PATH = "logo.png"  # Path to your logo PNG file (if using image)
+LOGO_TEXT = "SCENTIFY"  # Text to display (if using text)
+LOGO_HEIGHT = 80  # Height in pixels for image logo
+LOGO_TAGLINE = "Find Your Signature Scent"  # Tagline displayed below logo
+
+# ============================================================================
 # HEADER AND NAVIGATION
 # ============================================================================
 
 def render_header():
-    # Clickable logo (button) that always returns to home
-    col_logo, col_spacer = st.columns([1, 5])
-    with col_logo:
-        clicked = st.button(
-            "SCENTIFY",
-            key="logo_button",
-            use_container_width=True
-        )
-        if clicked:
+    """
+    Render the header with clickable logo (text or image) centered.
+    Home button stays on the left side.
+    """
+    # Home button in a single column
+    col1 = st.columns(1)[0]
+    
+    with col1:
+        # Home button on left
+        if st.button("⌂", key="logo_button", help="Return to home"):
             st.session_state.active_section = "home"
             st.session_state.show_perfume_details = False
             st.session_state.current_perfume = None
             st.rerun()
-    with col_spacer:
-        st.empty()
-
-    # Style the button to look like your title
+    
+    # Create centered logo and tagline (independent of columns)
+    if LOGO_TYPE == "image":
+        # Check if logo file exists
+        if os.path.exists(LOGO_IMAGE_PATH):
+            # Use image logo
+            logo_html = f"""
+            <div style="position: relative; margin-top: -45px;">
+                <div class="logo-container">
+                    <img src="data:image/png;base64,{get_image_base64(LOGO_IMAGE_PATH)}" class="logo-image" style="max-height: {LOGO_HEIGHT}px;">
+                </div>
+                <div class="logo-tagline">{LOGO_TAGLINE}</div>
+            </div>
+            """
+        else:
+            # Fallback to text if image not found
+            st.warning(f"Logo image not found at '{LOGO_IMAGE_PATH}'. Using text logo instead.")
+            logo_html = f"""
+            <div style="position: relative; margin-top: -45px;">
+                <div class="logo-container">
+                    <div class="logo-text">{LOGO_TEXT}</div>
+                </div>
+                <div class="logo-tagline">{LOGO_TAGLINE}</div>
+            </div>
+            """
+    else:
+        # Use text logo
+        logo_html = f"""
+        <div style="position: relative; margin-top: -45px;">
+            <div class="logo-container">
+                <div class="logo-text">{LOGO_TEXT}</div>
+            </div>
+            <div class="logo-tagline">{LOGO_TAGLINE}</div>
+        </div>
+        """
+    
+    # Display centered logo with tagline
+    st.markdown(logo_html, unsafe_allow_html=True)
+    
+    # Create invisible clickable area for logo (using JavaScript)
     st.markdown("""
-        <style>
-        div.stButton > button[kind="secondary"] {
-            background: transparent !important;
-            border: none !important;
-            color: #6b5b95 !important;
-            font-size: 52px !important;
-            font-weight: 600 !important;
-            letter-spacing: 3px !important;
-            text-align: left !important;
-            padding: 0 !important;
-            box-shadow: none !important;
-        }
-        div.stButton > button[kind="secondary"]:hover {
-            color: #5a4a7f !important;
-            transform: none !important;
-            box-shadow: none !important;
-        }
-        </style>
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const logoContainer = document.querySelector('.logo-container');
+            if (logoContainer) {
+                logoContainer.addEventListener('click', function() {
+                    // Find and click the home button
+                    const homeButton = document.querySelector('button[data-testid*="baseButton"]');
+                    if (homeButton) {
+                        homeButton.click();
+                    }
+                });
+            }
+        });
+        </script>
     """, unsafe_allow_html=True)
+    
     st.markdown("---")
+
+def get_image_base64(image_path: str) -> str:
+    """
+    Convert image file to base64 string for embedding in HTML.
+    
+    Args:
+        image_path: Path to image file
+    
+    Returns:
+        Base64 encoded string of the image
+    """
+    import base64
+    with open(image_path, "rb") as img_file:
+        return base64.b64encode(img_file.read()).decode()
 
 def render_back_button(target_section: str, label: str = "Back"):
     """
@@ -1238,6 +1414,18 @@ def render_perfume_detail_view(perfume: Dict):
         
         st.markdown("<br>", unsafe_allow_html=True)
         
+        # LONGEVITY AND SILLAGE
+        longevity = perfume.get('longevity', 'Moderate')
+        sillage = perfume.get('sillage', 'Moderate')
+        
+        col_long, col_sil = st.columns(2)
+        with col_long:
+            st.markdown(f'<div style="background: #f5f3f8; padding: 20px; border-radius: 12px; text-align: center;"><h4 style="color: #6b5b95; margin: 0 0 10px 0;">Longevity</h4><p style="font-size: 18px; font-weight: bold; color: #333; margin: 0;">{longevity}</p></div>', unsafe_allow_html=True)
+        with col_sil:
+            st.markdown(f'<div style="background: #f5f3f8; padding: 20px; border-radius: 12px; text-align: center;"><h4 style="color: #6b5b95; margin: 0 0 10px 0;">Sillage</h4><p style="font-size: 18px; font-weight: bold; color: #333; margin: 0;">{sillage}</p></div>', unsafe_allow_html=True)
+        
+        st.markdown("<br>", unsafe_allow_html=True)
+        
         # MAIN ACCORDS - RIGHT HERE in the detail section
         st.markdown('<h4 style="color: #6b5b95; text-align: center; margin-top: 20px; margin-bottom: 15px;">main accords</h4>', unsafe_allow_html=True)
         
@@ -1425,8 +1613,8 @@ def render_perfume_detail_view(perfume: Dict):
             
             fig_accords.update_layout(
                 height=chart_height,
-                plot_bgcolor='white',
-                paper_bgcolor='white',
+                plot_bgcolor='rgba(0,0,0,0)',
+                paper_bgcolor='rgba(0,0,0,0)',
                 font=dict(color='#333', size=15, family='Arial, sans-serif'),  # Slightly smaller font
                 xaxis=dict(
                     title='',
@@ -1453,128 +1641,276 @@ def render_perfume_detail_view(perfume: Dict):
     # PERFUME PYRAMID (Top, Heart, Base Notes)
     st.markdown('<h3 style="color: #6b5b95;">Perfume Pyramid</h3>', unsafe_allow_html=True)
     
+    # Custom CSS for note cards
+    st.markdown("""
+        <style>
+        .note-card {
+            background: #f5f3f8;
+            border-radius: 12px;
+            padding: 12px 16px;
+            margin: 8px 0;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .note-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+        .note-icon {
+            width: 45px;
+            height: 45px;
+            border-radius: 10px;
+            margin-right: 15px;
+            object-fit: cover;
+            background: #e8e4ee;
+            padding: 8px;
+        }
+        .note-name {
+            font-size: 15px;
+            color: #333;
+            font-weight: 500;
+        }
+        .note-category-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #6b5b95;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        </style>
+    """, unsafe_allow_html=True)
+    
     col_top, col_heart, col_base = st.columns(3)
     
     with col_top:
-        st.markdown("""
-            <div class="note-list">
-                <div class="note-category">Top Notes</div>
-            </div>
-        """, unsafe_allow_html=True)
+        st.markdown('<div class="note-category-title">Top Notes</div>', unsafe_allow_html=True)
         for note in perfume['top_notes']:
-            st.write(f"• {note}")
+            # Check if note is a dict (from API) or string (old format)
+            if isinstance(note, dict):
+                note_name = note.get('name', '')
+                note_image = note.get('imageUrl', '')
+                if note_image:
+                    # Display card with image from API
+                    st.markdown(f"""
+                        <div class="note-card">
+                            <img src="{note_image}" class="note-icon">
+                            <span class="note-name">{note_name}</span>
+                        </div>
+                    """, unsafe_allow_html=True)
+                else:
+                    # Display card with empty icon box
+                    st.markdown(f"""
+                        <div class="note-card">
+                            <div class="note-icon"></div>
+                            <span class="note-name">{note_name}</span>
+                        </div>
+                    """, unsafe_allow_html=True)
+            else:
+                # Old string format
+                st.markdown(f"""
+                    <div class="note-card">
+                        <div class="note-icon"></div>
+                        <span class="note-name">{note}</span>
+                    </div>
+                """, unsafe_allow_html=True)
     
     with col_heart:
-        st.markdown("""
-            <div class="note-list">
-                <div class="note-category">Heart Notes</div>
-            </div>
-        """, unsafe_allow_html=True)
+        st.markdown('<div class="note-category-title">Heart Notes</div>', unsafe_allow_html=True)
         for note in perfume['heart_notes']:
-            st.write(f"• {note}")
+            # Check if note is a dict (from API) or string (old format)
+            if isinstance(note, dict):
+                note_name = note.get('name', '')
+                note_image = note.get('imageUrl', '')
+                if note_image:
+                    # Display card with image from API
+                    st.markdown(f"""
+                        <div class="note-card">
+                            <img src="{note_image}" class="note-icon">
+                            <span class="note-name">{note_name}</span>
+                        </div>
+                    """, unsafe_allow_html=True)
+                else:
+                    # Display card with empty icon box
+                    st.markdown(f"""
+                        <div class="note-card">
+                            <div class="note-icon"></div>
+                            <span class="note-name">{note_name}</span>
+                        </div>
+                    """, unsafe_allow_html=True)
+            else:
+                # Old string format
+                st.markdown(f"""
+                    <div class="note-card">
+                        <div class="note-icon"></div>
+                        <span class="note-name">{note}</span>
+                    </div>
+                """, unsafe_allow_html=True)
     
     with col_base:
-        st.markdown("""
-            <div class="note-list">
-                <div class="note-category">Base Notes</div>
-            </div>
-        """, unsafe_allow_html=True)
+        st.markdown('<div class="note-category-title">Base Notes</div>', unsafe_allow_html=True)
         for note in perfume['base_notes']:
-            st.write(f"• {note}")
+            # Check if note is a dict (from API) or string (old format)
+            if isinstance(note, dict):
+                note_name = note.get('name', '')
+                note_image = note.get('imageUrl', '')
+                if note_image:
+                    # Display card with image from API
+                    st.markdown(f"""
+                        <div class="note-card">
+                            <img src="{note_image}" class="note-icon">
+                            <span class="note-name">{note_name}</span>
+                        </div>
+                    """, unsafe_allow_html=True)
+                else:
+                    # Display card with empty icon box
+                    st.markdown(f"""
+                        <div class="note-card">
+                            <div class="note-icon"></div>
+                            <span class="note-name">{note_name}</span>
+                        </div>
+                    """, unsafe_allow_html=True)
+            else:
+                # Old string format
+                st.markdown(f"""
+                    <div class="note-card">
+                        <div class="note-icon"></div>
+                        <span class="note-name">{note}</span>
+                    </div>
+                """, unsafe_allow_html=True)
     
     st.markdown("---")
     
-    # SEASONALITY BAR CHART - Improved appearance
-    st.markdown('<h3 style="color: #6b5b95; text-align: center;">Seasonality</h3>', unsafe_allow_html=True)
+    # SEASONALITY - Horizontal bar chart with rounded corners
+    st.markdown('<h3 style="color: #6b5b95;">Seasonality</h3>', unsafe_allow_html=True)
     
     # Get seasonality data with proper structure
     seasonality = perfume.get('seasonality', {'Winter': 3, 'Spring': 3, 'Summer': 3, 'Fall': 3})
     
-    # Create bar chart with custom colors for each season
-    season_colors = {
-        'Winter': '#A8C5DD',  # Ice blue
-        'Spring': '#B8E6B8',  # Light green
-        'Summer': '#FFD93D',  # Sunny yellow
-        'Fall': '#D97548'     # Autumn orange
-    }
+    # Create horizontal bar chart
+    seasons = ['Summer', 'Spring', 'Winter', 'Fall']
+    values = [seasonality.get(season, 3) for season in seasons]
     
     fig_season = go.Figure()
-    for season, rating in seasonality.items():
+    
+    for i, season in enumerate(seasons):
         fig_season.add_trace(go.Bar(
-            x=[season],
-            y=[rating],
-            name=season,
-            marker=dict(color=season_colors.get(season, '#6b5b95')),
+            y=[season],
+            x=[values[i]],
+            orientation='h',
+            marker=dict(
+                color='#8b7aa8',  # Purple to match website theme
+                line=dict(width=0)
+            ),
             showlegend=False,
-            text='',  # No text labels
+            text='',
             hoverinfo='skip'
         ))
     
     fig_season.update_layout(
-        height=350,
-        plot_bgcolor='white',
-        paper_bgcolor='white',
-        font=dict(color='#333', size=14, family='Arial, sans-serif'),
+        height=300,
+        plot_bgcolor='rgba(0,0,0,0)',
+        paper_bgcolor='rgba(0,0,0,0)',
+        font=dict(color='#333', size=15, family='Arial, sans-serif'),
         xaxis=dict(
-            title='', 
-            tickfont=dict(size=14, weight='bold'),
-            showgrid=False  # No grid lines
-        ),
-        yaxis=dict(
-            title='Suitability', 
-            range=[0, 5.5], 
-            tickfont=dict(size=12),
-            showgrid=False,  # No grid lines
+            title='',
+            range=[0, 5.5],
+            showgrid=False,
+            showticklabels=False,
             zeroline=False
         ),
-        margin=dict(l=40, r=40, t=20, b=40),
-        bargap=0.3
+        yaxis=dict(
+            title='',
+            tickfont=dict(size=14),
+            showgrid=False
+        ),
+        margin=dict(l=100, r=40, t=20, b=40),
+        bargap=0.3,
+        bargroupgap=0.1
     )
+    
     st.plotly_chart(fig_season, use_container_width=True)
     
-    # OCCASION BAR CHART (Day/Night only) - Improved appearance
-    st.markdown('<h3 style="color: #6b5b95; text-align: center;">Occasion</h3>', unsafe_allow_html=True)
+    # OCCASION - Full width stacked bar (NO percentages)
+    st.markdown('<h3 style="color: #6b5b95;">Occasion</h3>', unsafe_allow_html=True)
     
     # Get occasion data with proper structure
     occasion = perfume.get('occasion', {'Day': 3, 'Night': 3})
     
-    # Create bar chart with custom colors for day/night
-    occasion_colors = {
-        'Day': '#FFD93D',    # Bright yellow for day
-        'Night': '#4A4A8A'   # Deep purple for night
-    }
+    # Calculate percentages
+    total = occasion.get('Day', 3) + occasion.get('Night', 3)
+    day_percent = (occasion.get('Day', 3) / total * 100) if total > 0 else 50
+    night_percent = (occasion.get('Night', 3) / total * 100) if total > 0 else 50
     
+    # Create horizontal stacked bar chart
     fig_occasion = go.Figure()
-    for occ, rating in occasion.items():
-        fig_occasion.add_trace(go.Bar(
-            x=[occ],
-            y=[rating],
-            name=occ,
-            marker=dict(color=occasion_colors.get(occ, '#6b5b95')),
-            showlegend=False,
-            text='',  # No text labels
-            hoverinfo='skip'
-        ))
+    
+    # Day portion (left, lighter purple)
+    fig_occasion.add_trace(go.Bar(
+        y=[''],
+        x=[day_percent],
+        orientation='h',
+        marker=dict(color='#9b8bb5'),  # Lighter purple
+        showlegend=False,
+        text='',
+        hoverinfo='skip',
+        name='Day'
+    ))
+    
+    # Night portion (right, dark purple)
+    fig_occasion.add_trace(go.Bar(
+        y=[''],
+        x=[night_percent],
+        orientation='h',
+        marker=dict(color='#6b5b95'),  # Dark purple
+        showlegend=False,
+        text='',
+        hoverinfo='skip',
+        name='Night'
+    ))
+    
+    # Add text annotations for Day (left) and Night (right)
+    fig_occasion.add_annotation(
+        x=-8,
+        y=0,
+        text='Day',
+        showarrow=False,
+        font=dict(size=16, color='#6b5b95', weight='bold'),
+        xanchor='right',
+        yanchor='middle'
+    )
+    
+    fig_occasion.add_annotation(
+        x=108,
+        y=0,
+        text='Night',
+        showarrow=False,
+        font=dict(size=16, color='#6b5b95', weight='bold'),
+        xanchor='left',
+        yanchor='middle'
+    )
     
     fig_occasion.update_layout(
-        height=350,
-        plot_bgcolor='white',
-        paper_bgcolor='white',
-        font=dict(color='#333', size=14, family='Arial, sans-serif'),
+        height=150,
+        plot_bgcolor='rgba(0,0,0,0)',
+        paper_bgcolor='rgba(0,0,0,0)',
+        barmode='stack',
+        showlegend=False,
         xaxis=dict(
-            title='', 
-            tickfont=dict(size=14, weight='bold'),
-            showgrid=False  # No grid lines
-        ),
-        yaxis=dict(
-            title='Suitability', 
-            range=[0, 5.5], 
-            tickfont=dict(size=12),
-            showgrid=False,  # No grid lines
+            title='',
+            range=[-15, 115],
+            showgrid=False,
+            showticklabels=False,
             zeroline=False
         ),
-        margin=dict(l=40, r=40, t=20, b=40),
-        bargap=0.3
+        yaxis=dict(
+            title='',
+            showgrid=False,
+            showticklabels=False,
+            zeroline=False
+        ),
+        margin=dict(l=60, r=60, t=20, b=20)
     )
     st.plotly_chart(fig_occasion, use_container_width=True)
     
@@ -1834,8 +2170,8 @@ def render_questionnaire_results():
             )
         ),
         showlegend=False,
-        paper_bgcolor='white',
-        plot_bgcolor='white',
+        paper_bgcolor='rgba(0,0,0,0)',
+        plot_bgcolor='rgba(0,0,0,0)',
         font=dict(size=14, color='#333')
     )
     
@@ -2201,15 +2537,19 @@ def render_inventory_statistics(inventory: List[Dict]):
     # DONUT CHARTS FOR NOTES
     st.markdown('<h3 style="color: #6b5b95;">Note Distribution</h3>', unsafe_allow_html=True)
     
-    # Collect all notes
+    # Collect all notes - extract names from dict format
     top_notes = []
     heart_notes = []
     base_notes = []
     
     for perfume in inventory:
-        top_notes.extend(perfume['top_notes'])
-        heart_notes.extend(perfume['heart_notes'])
-        base_notes.extend(perfume['base_notes'])
+        # Handle both dict format (from API) and string format (old data)
+        for note in perfume['top_notes']:
+            top_notes.append(note['name'] if isinstance(note, dict) else note)
+        for note in perfume['heart_notes']:
+            heart_notes.append(note['name'] if isinstance(note, dict) else note)
+        for note in perfume['base_notes']:
+            base_notes.append(note['name'] if isinstance(note, dict) else note)
     
     # Create three columns for donut charts
     col_top, col_heart, col_base = st.columns(3)
@@ -2231,8 +2571,8 @@ def render_inventory_statistics(inventory: List[Dict]):
     
     st.markdown("---")
     
-    # SEASONALITY BAR CHART - Same style as perfume detail view
-    st.markdown('<h3 style="color: #6b5b95; text-align: center;">Seasonality Distribution</h3>', unsafe_allow_html=True)
+    # SEASONALITY - Horizontal bar chart with rounded corners
+    st.markdown('<h3 style="color: #6b5b95;">Seasonality Distribution</h3>', unsafe_allow_html=True)
     
     # Aggregate seasonality scores
     season_totals = {'Winter': 0, 'Fall': 0, 'Spring': 0, 'Summer': 0}
@@ -2241,49 +2581,51 @@ def render_inventory_statistics(inventory: List[Dict]):
         for season, score in perfume['seasonality'].items():
             season_totals[season] += score
     
-    # Create bar chart with custom colors for each season (matching perfume detail view)
-    season_colors = {
-        'Winter': '#A8C5DD',  # Ice blue
-        'Spring': '#B8E6B8',  # Light green
-        'Summer': '#FFD93D',  # Sunny yellow
-        'Fall': '#D97548'     # Autumn orange
-    }
+    # Create horizontal bar chart
+    seasons = ['Summer', 'Spring', 'Winter', 'Fall']
+    values = [season_totals.get(season, 0) for season in seasons]
     
     fig_season = go.Figure()
-    for season, total in season_totals.items():
+    
+    for i, season in enumerate(seasons):
         fig_season.add_trace(go.Bar(
-            x=[season],
-            y=[total],
-            name=season,
-            marker=dict(color=season_colors.get(season, '#6b5b95')),
+            y=[season],
+            x=[values[i]],
+            orientation='h',
+            marker=dict(
+                color='#8b7aa8',  # Purple to match website theme
+                line=dict(width=0)
+            ),
             showlegend=False,
-            text='',  # No text labels
+            text='',
             hoverinfo='skip'
         ))
     
     fig_season.update_layout(
-        height=350,
-        plot_bgcolor='white',
-        paper_bgcolor='white',
-        font=dict(color='#333', size=14, family='Arial, sans-serif'),
+        height=300,
+        plot_bgcolor='rgba(0,0,0,0)',
+        paper_bgcolor='rgba(0,0,0,0)',
+        font=dict(color='#333', size=15, family='Arial, sans-serif'),
         xaxis=dict(
-            title='', 
-            tickfont=dict(size=14, weight='bold'),
-            showgrid=False  # No grid lines
-        ),
-        yaxis=dict(
-            title='Suitability Score', 
-            tickfont=dict(size=12),
-            showgrid=False,  # No grid lines
+            title='',
+            showgrid=False,
+            showticklabels=False,
             zeroline=False
         ),
-        margin=dict(l=40, r=40, t=20, b=40),
-        bargap=0.3
+        yaxis=dict(
+            title='',
+            tickfont=dict(size=14),
+            showgrid=False
+        ),
+        margin=dict(l=100, r=40, t=20, b=40),
+        bargap=0.3,
+        bargroupgap=0.1
     )
+    
     st.plotly_chart(fig_season, use_container_width=True)
     
-    # OCCASION BAR CHART (Day/Night only) - Same style as perfume detail view
-    st.markdown('<h3 style="color: #6b5b95; text-align: center;">Occasion Distribution</h3>', unsafe_allow_html=True)
+    # OCCASION - Full width stacked bar (NO percentages)
+    st.markdown('<h3 style="color: #6b5b95;">Occasion Distribution</h3>', unsafe_allow_html=True)
     
     # Aggregate occasion scores
     occasion_totals = {'Day': 0, 'Night': 0}
@@ -2293,42 +2635,79 @@ def render_inventory_statistics(inventory: List[Dict]):
             if occasion in occasion_totals:
                 occasion_totals[occasion] += score
     
-    # Create bar chart with custom colors for day/night (matching perfume detail view)
-    occasion_colors = {
-        'Day': '#FFD93D',    # Bright yellow for day
-        'Night': '#4A4A8A'   # Deep purple for night
-    }
+    # Calculate percentages
+    total = occasion_totals['Day'] + occasion_totals['Night']
+    day_percent = (occasion_totals['Day'] / total * 100) if total > 0 else 50
+    night_percent = (occasion_totals['Night'] / total * 100) if total > 0 else 50
     
+    # Create horizontal stacked bar chart
     fig_occasion = go.Figure()
-    for occ, total in occasion_totals.items():
-        fig_occasion.add_trace(go.Bar(
-            x=[occ],
-            y=[total],
-            name=occ,
-            marker=dict(color=occasion_colors.get(occ, '#6b5b95')),
-            showlegend=False,
-            text='',  # No text labels
-            hoverinfo='skip'
-        ))
+    
+    # Day portion (left, lighter purple)
+    fig_occasion.add_trace(go.Bar(
+        y=[''],
+        x=[day_percent],
+        orientation='h',
+        marker=dict(color='#9b8bb5'),  # Lighter purple
+        showlegend=False,
+        text='',
+        hoverinfo='skip',
+        name='Day'
+    ))
+    
+    # Night portion (right, dark purple)
+    fig_occasion.add_trace(go.Bar(
+        y=[''],
+        x=[night_percent],
+        orientation='h',
+        marker=dict(color='#6b5b95'),  # Dark purple
+        showlegend=False,
+        text='',
+        hoverinfo='skip',
+        name='Night'
+    ))
+    
+    # Add text annotations for Day (left) and Night (right)
+    fig_occasion.add_annotation(
+        x=-8,
+        y=0,
+        text='Day',
+        showarrow=False,
+        font=dict(size=16, color='#6b5b95', weight='bold'),
+        xanchor='right',
+        yanchor='middle'
+    )
+    
+    fig_occasion.add_annotation(
+        x=108,
+        y=0,
+        text='Night',
+        showarrow=False,
+        font=dict(size=16, color='#6b5b95', weight='bold'),
+        xanchor='left',
+        yanchor='middle'
+    )
     
     fig_occasion.update_layout(
-        height=350,
-        plot_bgcolor='white',
-        paper_bgcolor='white',
-        font=dict(color='#333', size=14, family='Arial, sans-serif'),
+        height=150,
+        plot_bgcolor='rgba(0,0,0,0)',
+        paper_bgcolor='rgba(0,0,0,0)',
+        barmode='stack',
+        showlegend=False,
         xaxis=dict(
-            title='', 
-            tickfont=dict(size=14, weight='bold'),
-            showgrid=False  # No grid lines
-        ),
-        yaxis=dict(
-            title='Suitability Score', 
-            tickfont=dict(size=12),
-            showgrid=False,  # No grid lines
+            title='',
+            range=[-15, 115],
+            showgrid=False,
+            showticklabels=False,
             zeroline=False
         ),
-        margin=dict(l=40, r=40, t=20, b=40),
-        bargap=0.3
+        yaxis=dict(
+            title='',
+            showgrid=False,
+            showticklabels=False,
+            zeroline=False
+        ),
+        margin=dict(l=60, r=60, t=20, b=20)
     )
     st.plotly_chart(fig_occasion, use_container_width=True)
 
@@ -2372,8 +2751,8 @@ def create_donut_chart(note_counter: Counter, title: str):
     fig.update_layout(
         showlegend=True,
         legend=dict(orientation="v", yanchor="middle", y=0.5, xanchor="left", x=1.1),
-        paper_bgcolor='white',
-        plot_bgcolor='white',
+        paper_bgcolor='rgba(0,0,0,0)',
+        plot_bgcolor='rgba(0,0,0,0)',
         margin=dict(t=0, b=0, l=0, r=0),
         height=250
     )
