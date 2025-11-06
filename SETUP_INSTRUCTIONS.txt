@@ -1,0 +1,107 @@
+====================================================================
+SCENTIFY - PERFUME FINDER WEBSITE - SETUP INSTRUCTIONS
+====================================================================
+
+Follow these steps to set up and run your Scentify application:
+
+STEP 1: CREATE THE .env FILE
+====================================================================
+1. Create a new file called ".env" (without quotes) in this folder
+   (The same folder where scentify.py is located)
+
+2. Open the .env file with a text editor (TextEdit, Notepad, VS Code, etc.)
+
+3. Copy and paste this exact line into the file:
+
+   FRAGELLA_API_KEY=7efedf31895e75167c3b772d3ecd5c572c74f68dc28fe27d83df30b215cc5b8a
+
+4. Save the file
+
+NOTE: On macOS, if you can't see files starting with ".", you can:
+   - Use Terminal: cd to this folder and run: touch .env
+   - Then open it with: open -e .env
+   - Or use Command+Shift+. in Finder to show hidden files
+
+
+STEP 2: INSTALL PYTHON PACKAGES
+====================================================================
+Open Terminal (macOS/Linux) or Command Prompt (Windows) and run:
+
+   cd /Users/jil/Desktop/CS
+   pip install -r requirements.txt
+
+If that doesn't work, try:
+   pip3 install -r requirements.txt
+
+
+STEP 3: RUN THE APPLICATION
+====================================================================
+In the same Terminal/Command Prompt, run:
+
+   streamlit run scentify.py
+
+The application will automatically open in your web browser!
+If not, go to: http://localhost:8501
+
+
+TROUBLESHOOTING
+====================================================================
+
+Problem: "FRAGELLA_API_KEY not found" error
+Solution: Make sure .env file exists and contains the API key line
+
+Problem: "No module named 'streamlit'" error
+Solution: Install packages with: pip install -r requirements.txt
+
+Problem: Application won't start
+Solution: Make sure port 8501 is not in use, or run:
+          streamlit run scentify.py --server.port 8502
+
+
+HOW TO USE THE APPLICATION
+====================================================================
+
+LANDING PAGE:
+- Choose from Search, Questionnaire, or Perfume Inventory
+
+SEARCH:
+- Use filters to find perfumes by brand, price, gender, scent type
+- Click on any perfume to see detailed information
+- View seasonality and occasion charts
+- See similar perfume recommendations
+
+QUESTIONNAIRE:
+- Answer 5 questions about your preferences (scale 1-5)
+- View your scent profile radar chart
+- Get personalized recommendations
+
+PERFUME INVENTORY:
+- Click the "+" box to add perfumes to your collection
+- View statistics about your collection:
+  * Note distribution (donut charts)
+  * Seasonality preferences (bar chart)
+  * Occasion distribution (bar chart)
+
+
+MACHINE LEARNING FEATURES
+====================================================================
+The app tracks your interactions:
+- Every perfume you view, click, or add is recorded
+- Popular perfumes get a "Popular" badge
+- Search results are automatically sorted by popularity
+- The more you use it, the better the recommendations!
+
+
+DATA FILES (Auto-generated)
+====================================================================
+The app creates these files automatically - don't delete them:
+- user_interactions.json - tracks your activity
+- user_perfume_inventory.json - saves your collection
+- perfume_rankings.json - stores ML popularity scores
+
+
+ENJOY YOUR SCENTIFY APPLICATION!
+====================================================================
+
+For more details, see README.md
+

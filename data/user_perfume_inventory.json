@@ -1,0 +1,220 @@
+[
+  {
+    "id": "api_lily_dior_dior_for_women",
+    "name": "Lily Dior Dior for women",
+    "brand": "Dior",
+    "price": 49.0,
+    "gender": "Female",
+    "scent_type": "Floral",
+    "description": "A Moderate fragrance with Moderate projection.",
+    "image_url": "https://d2k6fvhyk5xgx.cloudfront.net/images/lily-dior-dior-for-women.jpg",
+    "top_notes": [
+      "muguet"
+    ],
+    "heart_notes": [
+      "Lily-of-the-Valley",
+      "Ylang-Ylang"
+    ],
+    "base_notes": [
+      "Jasmine",
+      "Rose"
+    ],
+    "main_accords": [
+      "white floral",
+      "yellow floral",
+      "fresh"
+    ],
+    "seasonality": {
+      "Winter": 1,
+      "Fall": 1,
+      "Spring": 1,
+      "Summer": 1
+    },
+    "occasion": {
+      "Daily": 1,
+      "Evening": 1,
+      "Romantic": 3,
+      "Professional": 1
+    }
+  },
+  {
+    "id": "api_chanel_chance_eau_tendre",
+    "name": "Chanel Chance Eau Tendre",
+    "brand": "Chanel",
+    "price": 208.99,
+    "gender": "Female",
+    "scent_type": "Floral",
+    "description": "A Moderate fragrance with Moderate projection.",
+    "image_url": "https://d2k6fvhyk5xgx.cloudfront.net/images/chanel-chance-eau-tendre.jpg",
+    "top_notes": [
+      "Quince",
+      "Grapefruit"
+    ],
+    "heart_notes": [
+      "Hyacinth",
+      "Jasmine"
+    ],
+    "base_notes": [
+      "Musk",
+      "Iris",
+      "Virginia Cedar",
+      "Amber"
+    ],
+    "main_accords": [
+      "floral",
+      "fruity",
+      "citrus"
+    ],
+    "seasonality": {
+      "Winter": 1,
+      "Fall": 1,
+      "Spring": 2,
+      "Summer": 1
+    },
+    "occasion": {
+      "Daily": 1,
+      "Evening": 1,
+      "Romantic": 3,
+      "Professional": 1
+    }
+  },
+  {
+    "id": "api_chance_eau_de_toilette_chanel_for_women",
+    "name": "Chance Eau de Toilette Chanel for women",
+    "brand": "Chanel",
+    "price": 35.0,
+    "gender": "Female",
+    "scent_type": "Fresh",
+    "description": "A Long Lasting fragrance with Strong projection.",
+    "image_url": "https://d2k6fvhyk5xgx.cloudfront.net/images/chance-eau-de-toilette-chanel-for-women.jpg",
+    "top_notes": [
+      "Patchouli",
+      "Pink Pepper",
+      "Pineapple",
+      "Hiacynth",
+      "Iris"
+    ],
+    "heart_notes": [
+      "Lemon",
+      "Jasmine",
+      "Rose"
+    ],
+    "base_notes": [
+      "Patchouli",
+      "Musk",
+      "Vetiver",
+      "Vanilla"
+    ],
+    "main_accords": [
+      "patchouli",
+      "woody",
+      "earthy"
+    ],
+    "seasonality": {
+      "Winter": 1,
+      "Fall": 3,
+      "Spring": 1,
+      "Summer": 1
+    },
+    "occasion": {
+      "Daily": 1,
+      "Evening": 1,
+      "Romantic": 3,
+      "Professional": 2
+    }
+  },
+  {
+    "id": "api_chanel_n19_chanel_for_women",
+    "name": "Chanel N19 Chanel for women",
+    "brand": "Chanel",
+    "price": 59.0,
+    "gender": "Female",
+    "scent_type": "Green",
+    "description": "A Moderate fragrance with Moderate projection.",
+    "image_url": "https://d2k6fvhyk5xgx.cloudfront.net/images/chanel-n19-chanel-for-women.jpg",
+    "top_notes": [
+      "Galbanum",
+      "Hiacynth",
+      "Bergamot",
+      "Neroli"
+    ],
+    "heart_notes": [
+      "Iris",
+      "Orris Root",
+      "Rose",
+      "Narcissus",
+      "Lily-of-the-Valley",
+      "Jasmine",
+      "Ylang-Ylang"
+    ],
+    "base_notes": [
+      "Oakmoss",
+      "Vetiver",
+      "Leather",
+      "Cedar",
+      "Musk",
+      "Sandalwood"
+    ],
+    "main_accords": [
+      "green",
+      "earthy",
+      "woody"
+    ],
+    "seasonality": {
+      "Winter": 1,
+      "Fall": 1,
+      "Spring": 1,
+      "Summer": 1
+    },
+    "occasion": {
+      "Daily": 1,
+      "Evening": 1,
+      "Romantic": 3,
+      "Professional": 2
+    }
+  },
+  {
+    "id": "api_tom_ford_ombre_leather",
+    "name": "Tom Ford Ombre Leather",
+    "brand": "Tom Ford",
+    "price": 254.99,
+    "size": "50ml",
+    "gender": "Unisex",
+    "scent_type": "Leather",
+    "description": "A Long Lasting fragrance with Strong projection.",
+    "image_url": "https://d2k6fvhyk5xgx.cloudfront.net/images/tom-ford-ombre-leather.jpg",
+    "top_notes": [
+      "Cardamom"
+    ],
+    "heart_notes": [
+      "Leather",
+      "Jasmine Sambac"
+    ],
+    "base_notes": [
+      "Amber",
+      "Moss",
+      "Patchouli"
+    ],
+    "main_accords": [
+      "leather",
+      "animalic",
+      "white floral",
+      "warm spicy",
+      "amber",
+      "smoky",
+      "earthy",
+      "mossy",
+      "patchouli"
+    ],
+    "seasonality": {
+      "Winter": 1,
+      "Fall": 2,
+      "Spring": 1,
+      "Summer": 1
+    },
+    "occasion": {
+      "Day": 1,
+      "Night": 2
+    }
+  }
+]

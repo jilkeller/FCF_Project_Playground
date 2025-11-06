@@ -1,0 +1,792 @@
+[
+  {
+    "perfume_id": "perf_001",
+    "interaction_type": "add_to_inventory",
+    "timestamp": "2025-11-06T10:09:29.408565"
+  },
+  {
+    "perfume_id": "perf_002",
+    "interaction_type": "add_to_inventory",
+    "timestamp": "2025-11-06T10:09:31.125803"
+  },
+  {
+    "perfume_id": "perf_006",
+    "interaction_type": "add_to_inventory",
+    "timestamp": "2025-11-06T10:09:32.679752"
+  },
+  {
+    "perfume_id": "perf_012",
+    "interaction_type": "add_to_inventory",
+    "timestamp": "2025-11-06T10:09:51.964766"
+  },
+  {
+    "perfume_id": "perf_011",
+    "interaction_type": "add_to_inventory",
+    "timestamp": "2025-11-06T10:09:53.529836"
+  },
+  {
+    "perfume_id": "api_dior_dior_dior_for_women",
+    "interaction_type": "click",
+    "timestamp": "2025-11-06T10:23:08.540223"
+  },
+  {
+    "perfume_id": "api_dior_dior_dior_for_women",
+    "interaction_type": "view",
+    "timestamp": "2025-11-06T10:23:08.587993"
+  },
+  {
+    "perfume_id": "api_versace_man_versace_for_men",
+    "interaction_type": "click",
+    "timestamp": "2025-11-06T10:24:15.906723"
+  },
+  {
+    "perfume_id": "api_versace_man_versace_for_men",
+    "interaction_type": "click",
+    "timestamp": "2025-11-06T10:24:18.405445"
+  },
+  {
+    "perfume_id": "api_dior_homme_dior_for_men",
+    "interaction_type": "click",
+    "timestamp": "2025-11-06T10:24:22.362919"
+  },
+  {
+    "perfume_id": "api_gucci_by_gucci",
+    "interaction_type": "click",
+    "timestamp": "2025-11-06T10:24:29.711306"
+  },
+  {
+    "perfume_id": "api_gucci_by_gucci",
+    "interaction_type": "click",
+    "timestamp": "2025-11-06T10:24:30.727713"
+  },
+  {
+    "perfume_id": "api_versace_man_versace_for_men",
+    "interaction_type": "click",
+    "timestamp": "2025-11-06T10:24:39.041070"
+  },
+  {
+    "perfume_id": "api_lily_dior_dior_for_women",
+    "interaction_type": "add_to_inventory",
+    "timestamp": "2025-11-06T10:24:56.371527"
+  },
+  {
+    "perfume_id": "api_chanel_chance_eau_tendre",
+    "interaction_type": "add_to_inventory",
+    "timestamp": "2025-11-06T10:24:58.850351"
+  },
+  {
+    "perfume_id": "api_chance_eau_de_toilette_chanel_for_women",
+    "interaction_type": "add_to_inventory",
+    "timestamp": "2025-11-06T10:25:03.214469"
+  },
+  {
+    "perfume_id": "api_chanel_n19_chanel_for_women",
+    "interaction_type": "add_to_inventory",
+    "timestamp": "2025-11-06T10:25:04.781108"
+  },
+  {
+    "perfume_id": "api_gucci_by_gucci",
+    "interaction_type": "click",
+    "timestamp": "2025-11-06T10:26:04.029981"
+  },
+  {
+    "perfume_id": "api_gucci_by_gucci",
+    "interaction_type": "view",
+    "timestamp": "2025-11-06T10:26:04.071438"
+  },
+  {
+    "perfume_id": "api_gucci_by_gucci",
+    "interaction_type": "view",
+    "timestamp": "2025-11-06T10:26:31.707686"
+  },
+  {
+    "perfume_id": "api_dior_homme_dior_for_men",
+    "interaction_type": "click",
+    "timestamp": "2025-11-06T10:26:31.756937"
+  },
+  {
+    "perfume_id": "api_dior_homme_dior_for_men",
+    "interaction_type": "view",
+    "timestamp": "2025-11-06T10:26:31.812868"
+  },
+  {
+    "perfume_id": "api_gucci_by_gucci",
+    "interaction_type": "click",
+    "timestamp": "2025-11-06T10:28:33.531562"
+  },
+  {
+    "perfume_id": "api_gucci_by_gucci",
+    "interaction_type": "view",
+    "timestamp": "2025-11-06T10:28:33.572612"
+  },
+  {
+    "perfume_id": "api_chanel_n19_chanel_for_women",
+    "interaction_type": "click",
+    "timestamp": "2025-11-06T10:28:57.251661"
+  },
+  {
+    "perfume_id": "api_chanel_n19_chanel_for_women",
+    "interaction_type": "click",
+    "timestamp": "2025-11-06T10:29:02.663174"
+  },
+  {
+    "perfume_id": "api_gucci_by_gucci",
+    "interaction_type": "click",
+    "timestamp": "2025-11-06T10:31:01.494616"
+  },
+  {
+    "perfume_id": "api_gucci_by_gucci",
+    "interaction_type": "view",
+    "timestamp": "2025-11-06T10:31:01.593146"
+  },
+  {
+    "perfume_id": "api_gucci_by_gucci",
+    "interaction_type": "view",
+    "timestamp": "2025-11-06T10:33:19.930297"
+  },
+  {
+    "perfume_id": "api_gucci_by_gucci_sport_gucci_for_men",
+    "interaction_type": "click",
+    "timestamp": "2025-11-06T10:33:19.988630"
+  },
+  {
+    "perfume_id": "api_gucci_by_gucci_sport_gucci_for_men",
+    "interaction_type": "view",
+    "timestamp": "2025-11-06T10:33:20.060739"
+  },
+  {
+    "perfume_id": "api_gucci_by_gucci_sport_gucci_for_men",
+    "interaction_type": "view",
+    "timestamp": "2025-11-06T10:41:44.497325"
+  },
+  {
+    "perfume_id": "api_versace_man_versace_for_men",
+    "interaction_type": "click",
+    "timestamp": "2025-11-06T10:41:44.577337"
+  },
+  {
+    "perfume_id": "api_versace_man_versace_for_men",
+    "interaction_type": "view",
+    "timestamp": "2025-11-06T10:41:44.707320"
+  },
+  {
+    "perfume_id": "api_chance_parfum_chanel_for_women",
+    "interaction_type": "click",
+    "timestamp": "2025-11-06T10:50:48.100837"
+  },
+  {
+    "perfume_id": "api_chance_parfum_chanel_for_women",
+    "interaction_type": "view",
+    "timestamp": "2025-11-06T10:50:48.163269"
+  },
+  {
+    "perfume_id": "api_chance_parfum_chanel_for_women",
+    "interaction_type": "view",
+    "timestamp": "2025-11-06T10:50:53.088090"
+  },
+  {
+    "perfume_id": "api_chance_eau_de_toilette_chanel_for_women",
+    "interaction_type": "click",
+    "timestamp": "2025-11-06T10:50:53.131062"
+  },
+  {
+    "perfume_id": "api_chance_eau_de_toilette_chanel_for_women",
+    "interaction_type": "view",
+    "timestamp": "2025-11-06T10:50:53.181149"
+  },
+  {
+    "perfume_id": "api_chance_eau_de_toilette_chanel_for_women",
+    "interaction_type": "view",
+    "timestamp": "2025-11-06T10:50:54.929078"
+  },
+  {
+    "perfume_id": "api_chance_parfum_chanel_for_women",
+    "interaction_type": "click",
+    "timestamp": "2025-11-06T10:50:54.978333"
+  },
+  {
+    "perfume_id": "api_chance_parfum_chanel_for_women",
+    "interaction_type": "view",
+    "timestamp": "2025-11-06T10:50:55.055184"
+  },
+  {
+    "perfume_id": "api_chance_parfum_chanel_for_women",
+    "interaction_type": "view",
+    "timestamp": "2025-11-06T10:50:55.924860"
+  },
+  {
+    "perfume_id": "api_miss_dior_dior_for_women",
+    "interaction_type": "click",
+    "timestamp": "2025-11-06T10:50:55.961109"
+  },
+  {
+    "perfume_id": "api_miss_dior_dior_for_women",
+    "interaction_type": "view",
+    "timestamp": "2025-11-06T10:50:55.998895"
+  },
+  {
+    "perfume_id": "api_prada_intense_prada_for_women",
+    "interaction_type": "click",
+    "timestamp": "2025-11-06T10:58:26.706915"
+  },
+  {
+    "perfume_id": "api_chanel_coco",
+    "interaction_type": "click",
+    "timestamp": "2025-11-06T10:58:30.680386"
+  },
+  {
+    "perfume_id": "api_chanel_chance_eau_tendre",
+    "interaction_type": "click",
+    "timestamp": "2025-11-06T10:58:49.886565"
+  },
+  {
+    "perfume_id": "api_chanel_chance_eau_tendre",
+    "interaction_type": "click",
+    "timestamp": "2025-11-06T10:58:51.390587"
+  },
+  {
+    "perfume_id": "api_chanel_chance_eau_tendre",
+    "interaction_type": "click",
+    "timestamp": "2025-11-06T10:58:52.164297"
+  },
+  {
+    "perfume_id": "api_chanel_chance_eau_tendre",
+    "interaction_type": "click",
+    "timestamp": "2025-11-06T10:58:52.527572"
+  },
+  {
+    "perfume_id": "api_chanel_chance_eau_tendre",
+    "interaction_type": "click",
+    "timestamp": "2025-11-06T10:58:52.754265"
+  },
+  {
+    "perfume_id": "api_chanel_chance_eau_tendre",
+    "interaction_type": "click",
+    "timestamp": "2025-11-06T10:58:52.939635"
+  },
+  {
+    "perfume_id": "api_chanel_chance_eau_tendre",
+    "interaction_type": "click",
+    "timestamp": "2025-11-06T10:58:53.138414"
+  },
+  {
+    "perfume_id": "api_chanel_chance_eau_tendre",
+    "interaction_type": "click",
+    "timestamp": "2025-11-06T10:58:53.321438"
+  },
+  {
+    "perfume_id": "api_chanel_chance_eau_tendre",
+    "interaction_type": "click",
+    "timestamp": "2025-11-06T10:58:53.504983"
+  },
+  {
+    "perfume_id": "api_chanel_chance_eau_tendre",
+    "interaction_type": "click",
+    "timestamp": "2025-11-06T10:58:53.687395"
+  },
+  {
+    "perfume_id": "api_chanel_chance_eau_tendre",
+    "interaction_type": "click",
+    "timestamp": "2025-11-06T10:58:53.872431"
+  },
+  {
+    "perfume_id": "api_chanel_chance_eau_tendre",
+    "interaction_type": "click",
+    "timestamp": "2025-11-06T10:58:54.037841"
+  },
+  {
+    "perfume_id": "api_chanel_chance_eau_tendre",
+    "interaction_type": "click",
+    "timestamp": "2025-11-06T10:58:54.189645"
+  },
+  {
+    "perfume_id": "api_chanel_chance_eau_tendre",
+    "interaction_type": "click",
+    "timestamp": "2025-11-06T10:58:54.507152"
+  },
+  {
+    "perfume_id": "api_chanel_chance_eau_tendre",
+    "interaction_type": "click",
+    "timestamp": "2025-11-06T10:58:54.655143"
+  },
+  {
+    "perfume_id": "api_chanel_chance_eau_tendre",
+    "interaction_type": "click",
+    "timestamp": "2025-11-06T10:58:54.806067"
+  },
+  {
+    "perfume_id": "api_chanel_chance_eau_tendre",
+    "interaction_type": "click",
+    "timestamp": "2025-11-06T10:58:55.070364"
+  },
+  {
+    "perfume_id": "api_parfums_de_marly_delina",
+    "interaction_type": "click",
+    "timestamp": "2025-11-06T11:07:40.470834"
+  },
+  {
+    "perfume_id": "api_parfums_de_marly_delina",
+    "interaction_type": "view",
+    "timestamp": "2025-11-06T11:07:40.516949"
+  },
+  {
+    "perfume_id": "api_parfums_de_marly_delina",
+    "interaction_type": "view",
+    "timestamp": "2025-11-06T11:07:58.597288"
+  },
+  {
+    "perfume_id": "api_miss_dior_2012_dior_for_women",
+    "interaction_type": "click",
+    "timestamp": "2025-11-06T11:07:58.669411"
+  },
+  {
+    "perfume_id": "api_miss_dior_2012_dior_for_women",
+    "interaction_type": "view",
+    "timestamp": "2025-11-06T11:07:58.729301"
+  },
+  {
+    "perfume_id": "api_miss_dior_2012_dior_for_women",
+    "interaction_type": "view",
+    "timestamp": "2025-11-06T11:08:04.896134"
+  },
+  {
+    "perfume_id": "api_burberry_body",
+    "interaction_type": "click",
+    "timestamp": "2025-11-06T11:08:04.948824"
+  },
+  {
+    "perfume_id": "api_burberry_body",
+    "interaction_type": "view",
+    "timestamp": "2025-11-06T11:08:05.038181"
+  },
+  {
+    "perfume_id": "api_chanel_coco",
+    "interaction_type": "click",
+    "timestamp": "2025-11-06T11:08:48.394109"
+  },
+  {
+    "perfume_id": "api_chanel_coco",
+    "interaction_type": "click",
+    "timestamp": "2025-11-06T11:08:55.603553"
+  },
+  {
+    "perfume_id": "api_dior_addict_dior_addict_dior_twist_dior_for_women",
+    "interaction_type": "click",
+    "timestamp": "2025-11-06T11:09:00.485982"
+  },
+  {
+    "perfume_id": "api_valentino_valentina",
+    "interaction_type": "click",
+    "timestamp": "2025-11-06T11:18:13.949086"
+  },
+  {
+    "perfume_id": "api_valentino_valentina",
+    "interaction_type": "view",
+    "timestamp": "2025-11-06T11:18:14.014065"
+  },
+  {
+    "perfume_id": "api_valentino_valentina_poudre",
+    "interaction_type": "click",
+    "timestamp": "2025-11-06T11:21:41.799221"
+  },
+  {
+    "perfume_id": "api_valentino_valentina_poudre",
+    "interaction_type": "view",
+    "timestamp": "2025-11-06T11:21:41.837411"
+  },
+  {
+    "perfume_id": "api_valentino_valentina_poudre",
+    "interaction_type": "view",
+    "timestamp": "2025-11-06T11:21:49.507037"
+  },
+  {
+    "perfume_id": "api_miss_dior_dior_for_women",
+    "interaction_type": "click",
+    "timestamp": "2025-11-06T11:21:49.598514"
+  },
+  {
+    "perfume_id": "api_miss_dior_dior_for_women",
+    "interaction_type": "view",
+    "timestamp": "2025-11-06T11:21:49.669123"
+  },
+  {
+    "perfume_id": "api_valentino_valentina_blush",
+    "interaction_type": "click",
+    "timestamp": "2025-11-06T11:22:06.528493"
+  },
+  {
+    "perfume_id": "api_valentino_valentina_blush",
+    "interaction_type": "view",
+    "timestamp": "2025-11-06T11:22:06.597539"
+  },
+  {
+    "perfume_id": "api_hugo_now_hugo_boss_for_men",
+    "interaction_type": "click",
+    "timestamp": "2025-11-06T11:23:12.956190"
+  },
+  {
+    "perfume_id": "api_hugo_now_hugo_boss_for_men",
+    "interaction_type": "click",
+    "timestamp": "2025-11-06T11:23:17.375707"
+  },
+  {
+    "perfume_id": "api_xerjoff_opera",
+    "interaction_type": "click",
+    "timestamp": "2025-11-06T11:30:02.467740"
+  },
+  {
+    "perfume_id": "api_xerjoff_opera",
+    "interaction_type": "view",
+    "timestamp": "2025-11-06T11:30:02.551397"
+  },
+  {
+    "perfume_id": "api_prada_amber",
+    "interaction_type": "click",
+    "timestamp": "2025-11-06T11:30:43.195428"
+  },
+  {
+    "perfume_id": "api_lily_dior_dior_for_women",
+    "interaction_type": "click",
+    "timestamp": "2025-11-06T11:31:06.326202"
+  },
+  {
+    "perfume_id": "api_lily_dior_dior_for_women",
+    "interaction_type": "view",
+    "timestamp": "2025-11-06T11:31:06.399598"
+  },
+  {
+    "perfume_id": "api_chance_eau_de_toilette_chanel_for_women",
+    "interaction_type": "click",
+    "timestamp": "2025-11-06T11:45:01.914199"
+  },
+  {
+    "perfume_id": "api_chance_eau_de_toilette_chanel_for_women",
+    "interaction_type": "view",
+    "timestamp": "2025-11-06T11:45:01.969461"
+  },
+  {
+    "perfume_id": "api_bonne_etoile_baby_dior_dior_unisex",
+    "interaction_type": "click",
+    "timestamp": "2025-11-06T11:50:16.077844"
+  },
+  {
+    "perfume_id": "api_bonne_etoile_baby_dior_dior_unisex",
+    "interaction_type": "view",
+    "timestamp": "2025-11-06T11:50:16.120920"
+  },
+  {
+    "perfume_id": "api_chance_parfum_chanel_for_women",
+    "interaction_type": "click",
+    "timestamp": "2025-11-06T12:01:58.421415"
+  },
+  {
+    "perfume_id": "api_chance_parfum_chanel_for_women",
+    "interaction_type": "view",
+    "timestamp": "2025-11-06T12:01:58.483126"
+  },
+  {
+    "perfume_id": "api_parfums_de_marly_delina",
+    "interaction_type": "click",
+    "timestamp": "2025-11-06T12:05:48.602482"
+  },
+  {
+    "perfume_id": "api_parfums_de_marly_delina",
+    "interaction_type": "view",
+    "timestamp": "2025-11-06T12:05:48.637750"
+  },
+  {
+    "perfume_id": "api_dior_grand_bal_dior_for_women",
+    "interaction_type": "click",
+    "timestamp": "2025-11-06T12:08:28.442018"
+  },
+  {
+    "perfume_id": "api_dior_grand_bal_dior_for_women",
+    "interaction_type": "view",
+    "timestamp": "2025-11-06T12:08:28.496424"
+  },
+  {
+    "perfume_id": "api_gianni_versace_couture_versace_for_women",
+    "interaction_type": "click",
+    "timestamp": "2025-11-06T12:11:30.593495"
+  },
+  {
+    "perfume_id": "api_gianni_versace_couture_versace_for_women",
+    "interaction_type": "view",
+    "timestamp": "2025-11-06T12:11:30.665873"
+  },
+  {
+    "perfume_id": "api_gianni_versace_couture_versace_for_women",
+    "interaction_type": "view",
+    "timestamp": "2025-11-06T12:12:31.480676"
+  },
+  {
+    "perfume_id": "api_chanel_gabrielle",
+    "interaction_type": "click",
+    "timestamp": "2025-11-06T12:12:31.555388"
+  },
+  {
+    "perfume_id": "api_chanel_gabrielle",
+    "interaction_type": "view",
+    "timestamp": "2025-11-06T12:12:31.630444"
+  },
+  {
+    "perfume_id": "api_versace_woman_summer_versace_for_women",
+    "interaction_type": "click",
+    "timestamp": "2025-11-06T12:14:07.188577"
+  },
+  {
+    "perfume_id": "api_versace_woman_summer_versace_for_women",
+    "interaction_type": "view",
+    "timestamp": "2025-11-06T12:14:07.302395"
+  },
+  {
+    "perfume_id": "api_prada",
+    "interaction_type": "click",
+    "timestamp": "2025-11-06T12:16:32.926402"
+  },
+  {
+    "perfume_id": "api_prada",
+    "interaction_type": "click",
+    "timestamp": "2025-11-06T12:16:37.758881"
+  },
+  {
+    "perfume_id": "api_chanel_no_46_chanel_for_women",
+    "interaction_type": "click",
+    "timestamp": "2025-11-06T12:16:54.536017"
+  },
+  {
+    "perfume_id": "api_chanel_no_46_chanel_for_women",
+    "interaction_type": "view",
+    "timestamp": "2025-11-06T12:16:54.603472"
+  },
+  {
+    "perfume_id": "api_tom_ford_for_men_tom_ford_for_men",
+    "interaction_type": "click",
+    "timestamp": "2025-11-06T12:18:38.765779"
+  },
+  {
+    "perfume_id": "api_tom_ford_for_men_tom_ford_for_men",
+    "interaction_type": "view",
+    "timestamp": "2025-11-06T12:18:38.826437"
+  },
+  {
+    "perfume_id": "api_tom_ford_for_men_tom_ford_for_men",
+    "interaction_type": "view",
+    "timestamp": "2025-11-06T12:18:50.057254"
+  },
+  {
+    "perfume_id": "api_trench_yves_saint_laurent_unisex",
+    "interaction_type": "click",
+    "timestamp": "2025-11-06T12:18:50.118560"
+  },
+  {
+    "perfume_id": "api_trench_yves_saint_laurent_unisex",
+    "interaction_type": "view",
+    "timestamp": "2025-11-06T12:18:50.173632"
+  },
+  {
+    "perfume_id": "api_trench_yves_saint_laurent_unisex",
+    "interaction_type": "view",
+    "timestamp": "2025-11-06T12:19:10.047084"
+  },
+  {
+    "perfume_id": "api_chance_eau_fraiche_hair_mist_chanel_for_women",
+    "interaction_type": "click",
+    "timestamp": "2025-11-06T12:19:10.108481"
+  },
+  {
+    "perfume_id": "api_chance_eau_fraiche_hair_mist_chanel_for_women",
+    "interaction_type": "view",
+    "timestamp": "2025-11-06T12:19:10.167870"
+  },
+  {
+    "perfume_id": "api_chance_eau_fraiche_hair_mist_chanel_for_women",
+    "interaction_type": "view",
+    "timestamp": "2025-11-06T12:19:17.660987"
+  },
+  {
+    "perfume_id": "api_dolce_&_gabbana_q",
+    "interaction_type": "click",
+    "timestamp": "2025-11-06T12:19:17.731869"
+  },
+  {
+    "perfume_id": "api_dolce_&_gabbana_q",
+    "interaction_type": "view",
+    "timestamp": "2025-11-06T12:19:17.831498"
+  },
+  {
+    "perfume_id": "api_dolce_&_gabbana_q",
+    "interaction_type": "view",
+    "timestamp": "2025-11-06T12:19:27.766175"
+  },
+  {
+    "perfume_id": "api_givenchy_naturally_chic_givenchy_for_women",
+    "interaction_type": "click",
+    "timestamp": "2025-11-06T12:19:27.859282"
+  },
+  {
+    "perfume_id": "api_givenchy_naturally_chic_givenchy_for_women",
+    "interaction_type": "view",
+    "timestamp": "2025-11-06T12:19:27.943414"
+  },
+  {
+    "perfume_id": "api_valentino_donna_acqua_valentino_for_women",
+    "interaction_type": "click",
+    "timestamp": "2025-11-06T12:23:41.321767"
+  },
+  {
+    "perfume_id": "api_valentino_donna_acqua_valentino_for_women",
+    "interaction_type": "view",
+    "timestamp": "2025-11-06T12:23:41.352052"
+  },
+  {
+    "perfume_id": "api_montale_paris_intense_cafe",
+    "interaction_type": "click",
+    "timestamp": "2025-11-06T12:27:55.525775"
+  },
+  {
+    "perfume_id": "api_montale_paris_intense_cafe",
+    "interaction_type": "view",
+    "timestamp": "2025-11-06T12:27:55.560783"
+  },
+  {
+    "perfume_id": "api_montale_paris_intense_cafe",
+    "interaction_type": "click",
+    "timestamp": "2025-11-06T12:31:09.968653"
+  },
+  {
+    "perfume_id": "api_montale_paris_intense_cafe",
+    "interaction_type": "view",
+    "timestamp": "2025-11-06T12:31:10.007509"
+  },
+  {
+    "perfume_id": "api_montale_paris_arabians",
+    "interaction_type": "click",
+    "timestamp": "2025-11-06T12:39:12.022399"
+  },
+  {
+    "perfume_id": "api_montale_paris_arabians",
+    "interaction_type": "view",
+    "timestamp": "2025-11-06T12:39:12.082967"
+  },
+  {
+    "perfume_id": "api_montale_paris_arabians",
+    "interaction_type": "click",
+    "timestamp": "2025-11-06T12:41:59.684142"
+  },
+  {
+    "perfume_id": "api_montale_paris_arabians",
+    "interaction_type": "view",
+    "timestamp": "2025-11-06T12:41:59.719415"
+  },
+  {
+    "perfume_id": "api_gucci_by_gucci_pour_homme_gucci_for_men",
+    "interaction_type": "click",
+    "timestamp": "2025-11-06T12:45:22.291114"
+  },
+  {
+    "perfume_id": "api_tom_ford_ombre_leather",
+    "interaction_type": "click",
+    "timestamp": "2025-11-06T12:49:30.846999"
+  },
+  {
+    "perfume_id": "api_tom_ford_ombre_leather",
+    "interaction_type": "view",
+    "timestamp": "2025-11-06T12:49:30.907850"
+  },
+  {
+    "perfume_id": "api_tom_ford_ombre_leather",
+    "interaction_type": "view",
+    "timestamp": "2025-11-06T12:49:43.058826"
+  },
+  {
+    "perfume_id": "api_tom_ford_ombre_leather",
+    "interaction_type": "add_to_inventory",
+    "timestamp": "2025-11-06T12:49:43.062911"
+  },
+  {
+    "perfume_id": "api_tom_ford_ombre_leather",
+    "interaction_type": "click",
+    "timestamp": "2025-11-06T12:49:58.772016"
+  },
+  {
+    "perfume_id": "api_tom_ford_ombre_leather",
+    "interaction_type": "view",
+    "timestamp": "2025-11-06T12:49:58.822826"
+  },
+  {
+    "perfume_id": "api_tom_ford_ombre_leather",
+    "interaction_type": "click",
+    "timestamp": "2025-11-06T12:50:05.715298"
+  },
+  {
+    "perfume_id": "api_tom_ford_ombre_leather",
+    "interaction_type": "view",
+    "timestamp": "2025-11-06T12:50:05.785536"
+  },
+  {
+    "perfume_id": "api_tom_ford_ombre_leather",
+    "interaction_type": "click",
+    "timestamp": "2025-11-06T12:57:10.728162"
+  },
+  {
+    "perfume_id": "api_tom_ford_ombre_leather",
+    "interaction_type": "view",
+    "timestamp": "2025-11-06T12:57:10.777845"
+  },
+  {
+    "perfume_id": "api_tom_ford_ombre_leather",
+    "interaction_type": "click",
+    "timestamp": "2025-11-06T12:57:31.442031"
+  },
+  {
+    "perfume_id": "api_tom_ford_ombre_leather",
+    "interaction_type": "view",
+    "timestamp": "2025-11-06T12:57:31.522769"
+  },
+  {
+    "perfume_id": "api_tom_ford_ombre_leather",
+    "interaction_type": "click",
+    "timestamp": "2025-11-06T13:04:55.142497"
+  },
+  {
+    "perfume_id": "api_tom_ford_ombre_leather",
+    "interaction_type": "view",
+    "timestamp": "2025-11-06T13:04:55.190542"
+  },
+  {
+    "perfume_id": "api_bonne_etoile_baby_dior_dior_unisex",
+    "interaction_type": "click",
+    "timestamp": "2025-11-06T13:05:15.095529"
+  },
+  {
+    "perfume_id": "api_bonne_etoile_baby_dior_dior_unisex",
+    "interaction_type": "view",
+    "timestamp": "2025-11-06T13:05:15.161305"
+  },
+  {
+    "perfume_id": "api_montale_paris_attar",
+    "interaction_type": "click",
+    "timestamp": "2025-11-06T13:05:34.499952"
+  },
+  {
+    "perfume_id": "api_montale_paris_attar",
+    "interaction_type": "view",
+    "timestamp": "2025-11-06T13:05:34.542246"
+  },
+  {
+    "perfume_id": "api_montale_paris_attar",
+    "interaction_type": "view",
+    "timestamp": "2025-11-06T13:05:49.677862"
+  },
+  {
+    "perfume_id": "api_dior_addict_dior_addict_dior_twist_dior_for_women",
+    "interaction_type": "click",
+    "timestamp": "2025-11-06T13:05:49.713593"
+  },
+  {
+    "perfume_id": "api_dior_addict_dior_addict_dior_twist_dior_for_women",
+    "interaction_type": "view",
+    "timestamp": "2025-11-06T13:05:49.784384"
+  }
+]
